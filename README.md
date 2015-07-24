@@ -1,5 +1,15 @@
-# Stupid Itertools Tricks
+# Stupid Itertools Tricks For Data Science
 
 Here's the code for my 2015 PyData Seattle talk.  
+
+The original title was 
+
+## Learning Data Science Using Functional Python 
+
+but then when I started writing it it was turning out to be
+
+## Stupid Itertools Tricks
+
+but since the conference was PyData, I figured I better get data back into it somehow.
 
 [Slides](https://docs.google.com/presentation/d/1eI60SL3UxtWfr9ktrv48-pcIkk4S7JiDmeXGCyyGhCs/edit?usp=sharing)
