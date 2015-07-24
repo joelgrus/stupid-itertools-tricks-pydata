@@ -24,3 +24,12 @@ def until_convergence(it):
     else: return curr
 
   return accumulate(it, no_repeat)
+
+def within_tolerance(tol, prev, curr):
+  if abs(prev - curr) < tol:
+    raise StopIteration
+  else:
+    return curr
+
+def until_nearly_convergence(it, tolerance=0.001):
+  return accumulate(it, partial(within_tolerance, tolerance))
