@@ -1,6 +1,6 @@
 # Stupid Itertools Tricks For Data Science
 
-Here's the code for my 2015 PyData Seattle talk.  
+Here's the code that goes along with my 2015 PyData Seattle talk.  
 
 The original title was 
 
