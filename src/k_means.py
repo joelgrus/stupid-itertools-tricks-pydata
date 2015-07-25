@@ -19,12 +19,13 @@ class KMeans:
     self.means = random.sample(list(points), self.k)
     for _ in range(num_iters):
       for i, point in enumerate(points):
-        d_min = float('inf')
-        for j, m in enumerate(self.means):
-          d = sum((m_i - p_i)**2 for m_i, p_i in zip(m, point))
-          if d < d_min:
-            assignments[i] = j
-            d_min = d
+        assignments[i] = self.predict(point)
+        #d_min = float('inf')
+        #for j, m in enumerate(self.means):
+        #  d = sum((m_i - p_i)**2 for m_i, p_i in zip(m, point))
+        #  if d < d_min:
+        #    assignments[i] = j
+        #    d_min = d
       for j in range(self.k):
         cluster = [p for p, c in zip(points, assignments) if c == j]
         self.means[j] = list(map(lambda x: x / len(cluster), reduce(partial(map, add), cluster)))
@@ -41,7 +42,7 @@ class KMeans:
 def run_kmeans(seed=1):
   random.seed(seed)
   points = np.random.random((100,2))
-  
+
   model = KMeans(5)
   model.fit(points, num_iters=100)
   assignments = [model.predict(point) for point in points]
